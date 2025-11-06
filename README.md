@@ -67,6 +67,17 @@ app/
 | `POST` | `/commerces/observation/{commerce_code}` | Permite añadir una observación asociada a un comercio. |
 | `GET` | `/commerces/observation/{commerce_code}` | Obtiene las observaciones registradas para un comercio. |
 
+## Comercios prueba
+Los comercios de prueba van del 1 al 25
+
+  ```bash
+    C-0001
+  ```
+
+  ```bash
+    C-0025
+  ```
+
 ## Ejemplo de Respuesta (Detalle Completo)
 
 ```json
@@ -77,25 +88,116 @@ app/
     "segmento": "Microempresa",
     "estado": "Activo",
     "canal_principal": "POS Físico",
+    "direccion": "Cra 85 # 15-20",
     "ciudad": "Bogotá",
     "departamento": "Cundinamarca",
-    "nivel_riesgo": "Bajo"
+    "correo_contacto": "contacto@panaderiala85.com",
+    "telefono_contacto": "+5712345678",
+    "nivel_riesgo": "Bajo",
+    "facturacion_promedio": 2500000,
+    "productos_principales": "Pan, pasteles y productos de panadería"
   },
   "terminales": [
     {
       "codigo_terminal": "T-10001",
+      "ciudad": "Bogotá",
       "modelo": "SmartPOS Clover Flex",
       "estado": "En mantenimiento",
+      "canal": "POS Físico",
+      "franquicias": "Mastercard,American Express",
+      "asignado_por": "Credibanco",
+      "ultima_actualizacion": "2025-11-06T20:43:16",
       "resumen_transacciones": {
         "total_transacciones": 774,
-        "volumen_total": 34885207
+        "volumen_total": 34885207,
+        "ciudad": "Bogotá",
+        "canal": "POS Físico"
       },
       "novedades": [
         {
-          "codigo": "NVD-T-10001-2025-02-01-Cambio",
+          "codigo": "NVD-T-10001-2025-02-01-Cambiodeesta",
           "fecha": "2025-02-01",
           "tipo": "Cambio de estado",
-          "responsable": "Credibanco"
+          "responsable": "Credibanco",
+          "observacion": "Actualización de estado operativo de la terminal T-10001 tras proceso de mantenimiento."
+        },
+        {
+          "codigo": "NVD-T-10001-2025-04-05-Altadetermin",
+          "fecha": "2025-04-05",
+          "tipo": "Alta de terminal",
+          "responsable": "Credibanco",
+          "observacion": "Se registró la instalación de la terminal T-10001 en un nuevo punto de venta."
+        },
+        {
+          "codigo": "NVD-T-10001-2025-07-02-Altadetermin",
+          "fecha": "2025-07-02",
+          "tipo": "Alta de terminal",
+          "responsable": "Credibanco",
+          "observacion": "Se registró la instalación de la terminal T-10001 en un nuevo punto de venta."
+        }
+      ]
+    },
+    {
+      "codigo_terminal": "T-10002",
+      "ciudad": "Bogotá",
+      "modelo": "Verifone VX520",
+      "estado": "Activo",
+      "canal": "POS Físico",
+      "franquicias": "Mastercard,American Express",
+      "asignado_por": "Credibanco",
+      "ultima_actualizacion": "2025-11-06T20:43:16",
+      "resumen_transacciones": {
+        "total_transacciones": 145,
+        "volumen_total": 204058447,
+        "ciudad": "Bogotá",
+        "canal": "POS Físico"
+      },
+      "novedades": [
+        {
+          "codigo": "NVD-T-10002-2025-04-17-Reasignación",
+          "fecha": "2025-04-17",
+          "tipo": "Reasignación comercial",
+          "responsable": "Credibanco",
+          "observacion": "Reasignación de la terminal T-10002 a un nuevo comercio o ubicación."
+        }
+      ]
+    },
+    {
+      "codigo_terminal": "T-10003",
+      "ciudad": "Bogotá",
+      "modelo": "Ingenico iCT250",
+      "estado": "Activo",
+      "canal": "POS Físico",
+      "franquicias": "Mastercard",
+      "asignado_por": "Credibanco",
+      "ultima_actualizacion": "2025-11-06T20:43:16",
+      "resumen_transacciones": {
+        "total_transacciones": 401,
+        "volumen_total": 70737657,
+        "ciudad": "Bogotá",
+        "canal": "POS Físico"
+      },
+      "novedades": [
+        {
+          "codigo": "NVD-T-10003-2025-01-25-Bajadetermin",
+          "fecha": "2025-01-25",
+          "tipo": "Baja de terminal",
+          "responsable": "Comercio",
+          "observacion": "La terminal T-10003 fue retirada del sistema por obsolescencia o solicitud del comercio."
+        },
+        {
+          "codigo": "NVD-T-10003-2025-04-15-Reasignación",
+          "fecha": "2025-04-15",
+          "tipo": "Reasignación comercial",
+          "responsable": "Comercio",
+          "observacion": "Reasignación de la terminal T-10003 a un nuevo comercio o ubicación."
+        },
+        {
+          "codigo": "NVD-T-10003-2025-04-23-Reasignación",
+          "fecha": "2025-04-23",
+          "tipo": "Reasignación comercial",
+          "responsable": "Comercio",
+          "observacion": "Reasignación de la terminal T-10003 a un nuevo comercio o ubicación."
         }
       ]
     }
@@ -103,28 +205,74 @@ app/
   "contratos": [
     {
       "codigo": "CTR-2025-1001",
+      "fecha_firma": "2025-07-31",
       "producto_principal": "SmartPOS",
+      "duracion_meses": 24,
       "valor_total": 21573195,
-      "estado": "En renovación"
+      "estado": "En renovación",
+      "representante": "Julián Pérez",
+      "notas": "Contrato con liquidación mensual."
     }
   ],
   "facturas": [
     {
       "codigo": "FCT-2025-1001",
+      "fecha_emision": "2025-05-03",
       "periodo": "mayo 2025",
       "importe_bruto": 18664766,
-      "estado": "Pagada"
+      "descuentos_retenciones": 671805,
+      "impuestos": 3546305.54,
+      "importe_neto": 17992961,
+      "estado": "Pagada",
+      "metodo_pago": "Débito automático",
+      "recurrente": true
+    },
+    {
+      "codigo": "FCT-2025-1002",
+      "fecha_emision": "2025-06-11",
+      "periodo": "junio 2025",
+      "importe_bruto": 6741530,
+      "descuentos_retenciones": 199412,
+      "impuestos": 1280890.7,
+      "importe_neto": 6542118,
+      "estado": "Pendiente",
+      "metodo_pago": "Transferencia",
+      "recurrente": true
     }
   ],
+  "incidentes": [],
   "conciliaciones": [
     {
       "codigo": "SET-C-0001-2025-01-24-0",
+      "fecha": "2025-01-24",
       "transacciones": 683,
-      "monto_total": 70737657
+      "monto_total": 70737657,
+      "tasa_comision": 2.05,
+      "retenido": 1450121,
+      "neto": 69287536,
+      "tipo_cuenta": "Cuenta Corriente",
+      "periodo": "enero 2025"
+    },
+    {
+      "codigo": "SET-C-0001-2025-09-03-1",
+      "fecha": "2025-09-03",
+      "transacciones": 1329,
+      "monto_total": 118258777,
+      "tasa_comision": 1.83,
+      "retenido": 2164135,
+      "neto": 116094642,
+      "tipo_cuenta": "Cuenta Corriente",
+      "periodo": "septiembre 2025"
     }
   ],
   "tickets_soporte": [],
-  "observaciones": []
+  "observaciones": [
+    {
+      "id": 1,
+      "comentario": "Test Observation",
+      "fecha": "2025-11-06T20:44:30.149216"
+    }
+  ]
 }
 ```
 
@@ -132,15 +280,156 @@ app/
 
 ```json
 {
-  "codigo": "C-0001",
-  "nombre": "Panadería La 85 S.A.S.",
-  "segmento": "Microempresa",
-  "estado": "Activo",
-  "ciudad": "Bogotá",
-  "terminales_activas": 3,
-  "facturacion_promedio": 2500000
+  "comercio": {
+    "codigo": "C-0001",
+    "nombre": "Panadería La 85 S.A.S.",
+    "segmento": "Microempresa",
+    "estado": "Activo",
+    "canal_principal": "POS Físico",
+    "direccion": "Cra 85 # 15-20",
+    "ciudad": "Bogotá",
+    "departamento": "Cundinamarca",
+    "correo_contacto": "contacto@panaderiala85.com",
+    "telefono_contacto": "+5712345678",
+    "nivel_riesgo": "Bajo",
+    "facturacion_promedio": 2500000,
+    "productos_principales": "Pan, pasteles y productos de panadería"
+  },
+  "terminales": [
+    {
+      "codigo_terminal": "T-10001",
+      "ciudad": "Bogotá",
+      "modelo": "SmartPOS Clover Flex",
+      "estado": "En mantenimiento",
+      "canal": "POS Físico",
+      "franquicias": "Mastercard,American Express",
+      "asignado_por": "Credibanco",
+      "ultima_actualizacion": "2025-11-06T20:43:16",
+      "resumen_transacciones": {
+        "total_transacciones": 774,
+        "volumen_total": 34885207
+      },
+      "novedades": [
+        {
+          "codigo": "NVD-T-10001-2025-02-01-Cambiodeesta",
+          "fecha": "2025-02-01",
+          "tipo": "Cambio de estado",
+          "responsable": "Credibanco",
+          "observacion": "Actualización de estado operativo de la terminal T-10001 tras proceso de mantenimiento."
+        },
+        {
+          "codigo": "NVD-T-10001-2025-04-05-Altadetermin",
+          "fecha": "2025-04-05",
+          "tipo": "Alta de terminal",
+          "responsable": "Credibanco",
+          "observacion": "Se registró la instalación de la terminal T-10001 en un nuevo punto de venta."
+        },
+        {
+          "codigo": "NVD-T-10001-2025-07-02-Altadetermin",
+          "fecha": "2025-07-02",
+          "tipo": "Alta de terminal",
+          "responsable": "Credibanco",
+          "observacion": "Se registró la instalación de la terminal T-10001 en un nuevo punto de venta."
+        }
+      ]
+    },
+    {
+      "codigo_terminal": "T-10002",
+      "ciudad": "Bogotá",
+      "modelo": "Verifone VX520",
+      "estado": "Activo",
+      "canal": "POS Físico",
+      "franquicias": "Mastercard,American Express",
+      "asignado_por": "Credibanco",
+      "ultima_actualizacion": "2025-11-06T20:43:16",
+      "resumen_transacciones": {
+        "total_transacciones": 145,
+        "volumen_total": 204058447
+      },
+      "novedades": [
+        {
+          "codigo": "NVD-T-10002-2025-04-17-Reasignación",
+          "fecha": "2025-04-17",
+          "tipo": "Reasignación comercial",
+          "responsable": "Credibanco",
+          "observacion": "Reasignación de la terminal T-10002 a un nuevo comercio o ubicación."
+        }
+      ]
+    },
+    {
+      "codigo_terminal": "T-10003",
+      "ciudad": "Bogotá",
+      "modelo": "Ingenico iCT250",
+      "estado": "Activo",
+      "canal": "POS Físico",
+      "franquicias": "Mastercard",
+      "asignado_por": "Credibanco",
+      "ultima_actualizacion": "2025-11-06T20:43:16",
+      "resumen_transacciones": {
+        "total_transacciones": 401,
+        "volumen_total": 70737657
+      },
+      "novedades": [
+        {
+          "codigo": "NVD-T-10003-2025-01-25-Bajadetermin",
+          "fecha": "2025-01-25",
+          "tipo": "Baja de terminal",
+          "responsable": "Comercio",
+          "observacion": "La terminal T-10003 fue retirada del sistema por obsolescencia o solicitud del comercio."
+        },
+        {
+          "codigo": "NVD-T-10003-2025-04-15-Reasignación",
+          "fecha": "2025-04-15",
+          "tipo": "Reasignación comercial",
+          "responsable": "Comercio",
+          "observacion": "Reasignación de la terminal T-10003 a un nuevo comercio o ubicación."
+        },
+        {
+          "codigo": "NVD-T-10003-2025-04-23-Reasignación",
+          "fecha": "2025-04-23",
+          "tipo": "Reasignación comercial",
+          "responsable": "Comercio",
+          "observacion": "Reasignación de la terminal T-10003 a un nuevo comercio o ubicación."
+        }
+      ]
+    }
+  ],
+  "facturas": [
+    {
+      "codigo": "FCT-2025-1001",
+      "fecha_emision": "2025-05-03",
+      "periodo": "mayo 2025",
+      "importe_neto": 17992961,
+      "estado": "Pagada"
+    },
+    {
+      "codigo": "FCT-2025-1002",
+      "fecha_emision": "2025-06-11",
+      "periodo": "junio 2025",
+      "importe_neto": 6542118,
+      "estado": "Pendiente"
+    }
+  ],
+  "incidentes": [],
+  "observaciones": [
+    {
+      "id": 1,
+      "comentario": "Test Observation",
+      "fecha": "2025-11-06T20:44:30.149216"
+    }
+  ]
 }
 ```
+## Ejemplo de ingreso de novedad de un comercio
+1. Ingresar código de comercio
+   ```bash
+   C-0001
+   ```
+
+2. Ingresar comentario en texto
+   ```bash
+   Observación de prueba para el comercio 1
+   ```
 
 ## Tecnologías Utilizadas
 

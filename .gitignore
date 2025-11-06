@@ -1,0 +1,79 @@
+# =====================================
+# ARCHIVOS GENERALES
+# =====================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+*.DS_Store
+*.swp
+*.swo
+*.bak
+
+# =====================================
+# ENTORNOS VIRTUALES
+# =====================================
+.venv/
+venv/
+ENV/
+env/
+*.env
+.env.local
+.env.*.local
+
+# =====================================
+# BASE DE DATOS Y MIGRACIONES
+# =====================================
+*.db
+*.sqlite3
+app.db
+alembic.ini
+/migrations/
+
+# =====================================
+# CONFIGURACIONES Y CACHES
+# =====================================
+.cache/
+.pytest_cache/
+__pycache__/
+coverage/
+.coverage
+htmlcov/
+*.cover
+
+# =====================================
+# EDITORES Y SISTEMAS
+# =====================================
+.vscode/
+.idea/
+*.code-workspace
+
+# =====================================
+# DOCKER Y BUILD
+# =====================================
+*.pid
+*.seed
+Dockerfile~
+docker-compose.override.yml
+*.tar
+*.zip
+/build/
+dist/
+*.egg-info/
+
+# =====================================
+# DATOS TEMPORALES
+# =====================================
+tmp/
+temp/
+logs/
+uploads/
+data/
+__temp__/
+
+# =====================================
+# ONE DRIVE / CLOUD
+# =====================================
+*OneDrive*/
+*CloudStorage*/

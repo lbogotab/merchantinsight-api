@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  merchant-api:
+    build: .
+    container_name: merchantinsight-api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./merchant.db
+      - RESET_DB_ON_START=true
+    volumes:
+      - .:/app
+    restart: always

@@ -7,7 +7,7 @@ MerchantInsight API es una aplicación desarrollada en **FastAPI** y **SQLAlchem
 
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/tuusuario/merchantinsight-api.git
+   git clone https://github.com/lbogotab/merchantinsight-api.git
    cd merchantinsight-api
    ```
 
